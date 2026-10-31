@@ -1,0 +1,837 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* =========================================
+   1. GLOBAL STYLES
+========================================= */
+
+:root {
+  --green: #174d32;
+  --green-hover: #286f46;
+  --dark: #10291e;
+  --lime: #c9f36b;
+  --cream: #f7f8f2;
+  --white: #ffffff;
+  --text: #18251e;
+  --muted: #66736b;
+  --border: #dce4dc;
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  transition: all 0.25s ease;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================================
+   2. NAVIGATION
+========================================= */
+
+.navbar {
+  background: var(--white);
+  min-height: 85px;
+  padding: 18px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.logo-icon {
+  font-size: 38px;
+  color: var(--green);
+}
+
+.logo small {
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar nav a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navbar nav a:hover,
+.back-link:hover {
+  color: #32965b;
+}
+
+/* =========================================
+   3. BUTTONS
+========================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.btn-green {
+  background: var(--green);
+  color: var(--white);
+}
+
+.btn-green:hover {
+  background: var(--green-hover);
+  transform: translateY(-2px);
+}
+
+.btn-lime {
+  background: var(--lime);
+  color: var(--dark);
+}
+
+.btn-lime:hover {
+  background: #ddff98;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.7);
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--dark);
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.eyebrow {
+  color: #418759;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   4. HOMEPAGE HERO
+========================================= */
+
+.hero {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8,29,17,0.96) 0%,
+      rgba(8,29,17,0.83) 42%,
+      rgba(8,29,17,0.08) 100%
+    ),
+    url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1800')
+    center / cover;
+  color: white;
+}
+
+.hero-content {
+  width: min(750px, 90%);
+  margin-left: 7%;
+  padding: 70px 0;
+}
+
+.hero h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(42px, 5.5vw, 78px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -3px;
+  margin: 25px 0;
+}
+
+.hero h1 span {
+  color: var(--lime);
+}
+
+.hero p {
+  max-width: 540px;
+  color: #e1e9df;
+  font-size: 17px;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* =========================================
+   5. THREE STEPS
+========================================= */
+
+.stats {
+  background: var(--dark);
+  color: white;
+  padding: 30px 7%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.stats strong {
+  display: block;
+  color: var(--lime);
+  font-size: 29px;
+}
+
+.stats p {
+  color: #d1ded4;
+  font-size: 14px;
+}
+
+/* =========================================
+   6. FEATURED CAUSES
+========================================= */
+
+.section {
+  padding: 95px 7%;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section h2,
+.business-content h2,
+.cta h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  margin: 12px 0;
+}
+
+.section h2 span,
+.business-content h2 span {
+  color: #378553;
+}
+
+.section-heading p {
+  color: var(--muted);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.045);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 25px;
+}
+
+.category {
+  color: #418759;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.card a {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.card a:hover {
+  color: #39a366;
+}
+
+/* =========================================
+   7. SMALL BUSINESS SECTION
+========================================= */
+
+.business-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #e9efe5;
+}
+
+.business-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 490px;
+  object-fit: cover;
+  display: block;
+}
+
+.business-content {
+  padding: 85px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.business-content p {
+  color: #53675a;
+  max-width: 500px;
+  margin: 18px 0 30px;
+}
+
+/* =========================================
+   8. CALL TO ACTION
+========================================= */
+
+.cta {
+  text-align: center;
+  padding: 100px 7%;
+  background: var(--dark);
+  color: white;
+}
+
+.cta h2 {
+  margin: 18px auto;
+  max-width: 900px;
+}
+
+.cta h2 span {
+  color: var(--lime);
+}
+
+.cta p {
+  color: #c9d9ce;
+  margin-bottom: 30px;
+}
+
+/* =========================================
+   9. FOOTER
+========================================= */
+
+footer {
+  text-align: center;
+  padding: 55px 20px;
+  background: white;
+}
+
+footer h3 {
+  color: var(--green);
+  font-size: 28px;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+footer small {
+  color: #8b978f;
+}
+
+/* =========================================
+   10. REGISTRATION LAYOUT
+========================================= */
+
+.back-link {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.register-layout {
+  min-height: calc(100vh - 85px);
+  display: grid;
+  grid-template-columns: 44% 56%;
+}
+
+.register-image {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(5,31,19,0.85),
+      rgba(5,31,19,0.05)
+    ),
+    url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1400')
+    center / cover;
+
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+  color: white;
+}
+
+.register-image h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(35px, 4vw, 60px);
+  line-height: 1.12;
+  margin: 25px 0;
+}
+
+.register-image p {
+  max-width: 440px;
+  color: #e1e9e3;
+}
+
+.register-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 30px;
+  background: #f8faf6;
+}
+
+.register-box {
+  width: 100%;
+  max-width: 560px;
+  min-width: 0;
+}
+
+.register-box h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(30px, 3vw, 42px);
+  margin: 12px 0;
+}
+
+.form-intro {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+/* =========================================
+   11. REGISTRATION FORM INPUTS
+========================================= */
+
+#registerForm {
+  width: 100%;
+}
+
+#registerForm > label:not(.terms) {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#registerForm > input {
+  display: block;
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+#registerForm > input:focus {
+  border-color: #438a5e;
+  box-shadow: 0 0 0 3px rgba(67,138,94,0.12);
+}
+
+#registerForm > input::placeholder {
+  color: #89948b;
+}
+
+/* =========================================
+   12. ACCOUNT TYPE CARDS - FIXED
+========================================= */
+
+.account-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 25px;
+}
+
+.account-option {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.account-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.account-option span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  min-height: 145px;
+  padding: 18px 8px;
+
+  background: #ffffff;
+  border: 2px solid #e0e8df;
+  border-radius: 14px;
+
+  text-align: center;
+  font-size: 27px;
+  transition: all 0.25s ease;
+}
+
+.account-option strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #183b29;
+}
+
+.account-option small {
+  display: block;
+  font-size: 11px;
+  color: #6b7b70;
+  line-height: 1.5;
+}
+
+.account-option:hover span {
+  border-color: #4b9667;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.account-option input:checked + span {
+  background: #edf7ed;
+  border-color: #174d32;
+  box-shadow: 0 0 0 1px #174d32;
+}
+
+.account-option input:focus-visible + span {
+  outline: 3px solid #8dcfa3;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   13. TERMS AND CONDITIONS
+========================================= */
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 22px 0;
+  font-size: 13px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.terms input {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--green);
+}
+
+.terms span {
+  flex: 1;
+}
+
+/* =========================================
+   14. CREATE ACCOUNT BUTTON
+========================================= */
+
+#registerForm .submit-btn {
+  display: flex;
+  width: 100%;
+  min-height: 55px;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--green);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#registerForm .submit-btn:hover {
+  background: var(--green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23,77,50,0.18);
+}
+
+/* =========================================
+   15. FORM MESSAGES
+========================================= */
+
+.form-message {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.form-message:empty {
+  display: none;
+}
+
+.form-message.error {
+  color: #bb3333;
+}
+
+.form-message.success {
+  color: var(--green);
+}
+
+/* =========================================
+   16. LOGIN TEXT
+========================================= */
+
+.login-note {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #6b7b70;
+}
+
+.login-note span {
+  display: block;
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* =========================================
+   17. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .business-section {
+    grid-template-columns: 1fr;
+  }
+
+  .business-image img {
+    max-height: 350px;
+    min-height: 0;
+  }
+
+  .register-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .register-image {
+    min-height: 300px;
+  }
+
+}
+
+/* =========================================
+   18. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    padding: 20px 5%;
+  }
+
+  .navbar nav {
+    gap: 12px;
+  }
+
+  .navbar nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 550px;
+    background-position: center;
+  }
+
+  .hero-content {
+    margin-left: 6%;
+  }
+
+  .hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 65px 5%;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-content {
+    padding: 65px 7%;
+  }
+
+  .register-image {
+    padding: 35px;
+  }
+
+  .register-panel {
+    padding: 45px 20px;
+  }
+
+  .account-options {
+    gap: 7px;
+  }
+
+  .account-option span {
+    min-height: 125px;
+    padding: 12px 4px;
+    font-size: 23px;
+  }
+
+  .account-option strong {
+    font-size: 11px;
+  }
+
+  .account-option small {
+    font-size: 10px;
+  }
+
+  .terms {
+    font-size: 12px;
+  }
+
+}
+
+/* =========================================
+   19. EXTRA SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+  .account-options {
+    grid-template-columns: 1fr;
+  }
+
+  .account-option span {
+    min-height: 95px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+}

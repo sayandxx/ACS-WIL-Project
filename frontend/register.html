@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account | ACS</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">
+    <span class="logo-icon">✳</span>
+    <span>ACS <small>People. Causes. Change.</small></span>
+  </a>
+  <a href="index.html" class="back-link">← Back to Home</a>
+</header>
+
+<main class="register-layout">
+
+  <section class="register-image">
+    <div class="register-image-content">
+      <span class="tag">A COMMUNITY FOR CHANGE</span>
+      <h1>Good People.<br>Brighter Tomorrows.</h1>
+      <p>
+        Join a community that supports meaningful causes,
+        empowers local businesses, and creates positive change.
+      </p>
+    </div>
+  </section>
+
+  <section class="register-panel">
+    <div class="register-box">
+
+      <span class="eyebrow">JOIN THE MOVEMENT</span>
+      <h2>Create Your Account</h2>
+      <p class="form-intro">
+        Be part of a community making a difference.
+      </p>
+
+      <form id="registerForm" novalidate>
+
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName"
+               placeholder="Enter your full name"
+               autocomplete="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email"
+               placeholder="Enter your email address"
+               autocomplete="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password"
+               placeholder="Create a password"
+               autocomplete="new-password" required>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword"
+               placeholder="Confirm your password"
+               autocomplete="new-password" required>
+
+        <label>Choose Account Type</label>
+        <div class="account-options">
+          <label class="account-option">
+            <input type="radio" name="accountType"
+                   value="individual" checked>
+            <span>👤<strong>Individual</strong>
+              <small>Support causes</small></span>
+          </label>
+
+          <label class="account-option">
+            <input type="radio" name="accountType"
+                   value="business">
+            <span>🏪<strong>Business</strong>
+              <small>Promote business</small></span>
+          </label>
+
+          <label class="account-option">
+            <input type="radio" name="accountType"
+                   value="organisation">
+            <span>🤝<strong>Organisation</strong>
+              <small>Create campaigns</small></span>
+          </label>
+        </div>
+
+        <label class="terms">
+          <input type="checkbox" id="terms" required>
+          <span>I agree to the Terms of Service and Privacy Policy</span>
+        </label>
+
+        <p id="formMessage" class="form-message"
+           role="status" aria-live="polite"></p>
+
+        <button type="submit" class="btn btn-green submit-btn">
+          Create Account ↗
+        </button>
+
+      </form>
+
+      <p class="login-note">
+        Already have an account?
+        <span>Login will be available in a later stage.</span>
+      </p>
+
+    </div>
+  </section>
+</main>
+
+<script src="js/register.js"></script>
+</body>
+</html>

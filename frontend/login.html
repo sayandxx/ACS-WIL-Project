@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | ACS Social Awareness</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .login-container {
+            max-width: 420px;
+            margin: 80px auto;
+            padding: 35px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px #0002;
+        }
+
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .login-container label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            background: #173f30;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .login-container p {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <h1>Welcome Back!</h1>
+
+        <form id="loginForm">
+
+            <label for="email">Email Address</label>
+            <input type="email"
+                   id="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label for="password">Password</label>
+            <input type="password"
+                   id="password"
+                   placeholder="Enter your password"
+                   minlength="8"
+                   required>
+
+            <button type="submit">Login</button>
+
+            <p id="message" role="status"></p>
+
+        </form>
+
+        <p>
+            Don't have an account?
+            <a href="register.html">Sign Up</a>
+        </p>
+
+        <p>
+            <a href="index.html">Back to Homepage</a>
+        </p>
+
+    </main>
+
+    <script src="js/login.js"></script>
+
+</body>
+</html>
