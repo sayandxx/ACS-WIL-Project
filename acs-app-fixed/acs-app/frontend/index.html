@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACS | People. Causes. Change.</title>
+  <!-- Absolute paths (/css/...) so files load from any address, e.g. /causes/5 -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+
+<!-- The navbar stays on screen; the router updates its links when you log in or out -->
+<header class="navbar">
+  <a href="/" class="logo">
+    <span class="logo-icon">✳</span>
+    <span>ACS <small>People. Causes. Change.</small></span>
+  </a>
+
+  <nav id="mainNav">
+    <a href="/">Home</a>
+    <a href="/#causes">Social Causes</a>
+    <a href="/#businesses">Small Businesses</a>
+    <a href="/#about">About Us</a>
+  </nav>
+
+  <div class="nav-actions" id="navActions"></div>
+</header>
+
+<!-- Each "page" (view) is drawn in here by the router -->
+<main id="app" tabindex="-1">
+  <div class="page"><div class="skeleton" style="min-height: 420px;"></div></div>
+</main>
+
+<footer>
+  <h3>✳ ACS</h3>
+  <p>People. Causes. Change.</p>
+  <p>Social Awareness Web Application | ACS app</p>
+  <small>© 2026 ACS. All rights reserved.</small>
+</footer>
+
+<noscript>
+  <p style="text-align:center; padding:20px;">ACS needs JavaScript turned on to run.</p>
+</noscript>
+
+<!-- type="module" lets the files import each other, so there's one entry point -->
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>

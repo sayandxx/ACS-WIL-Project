@@ -1,0 +1,696 @@
+/* =========================================
+   Extra styles for the logged-in features.
+   Loaded after style.css and reuses its colours (--green, --lime, etc.)
+========================================= */
+
+/* ---------- Navbar actions (login state) ---------- */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-link-strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.nav-link-strong:hover {
+  color: #32965b;
+}
+
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lime);
+  color: var(--dark);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.btn-outline-green {
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 10px 18px;
+}
+
+.btn-outline-green:hover {
+  background: var(--green);
+  color: var(--white);
+}
+
+.btn-sm {
+  padding: 9px 14px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+.btn-danger {
+  background: #fbeaea;
+  color: #a12b2b;
+}
+
+.btn-danger:hover {
+  background: #a12b2b;
+  color: var(--white);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- Shared form styles (login, dashboard forms) ---------- */
+
+.auth-form > label:not(.terms),
+.form-field label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.auth-form > input,
+.form-field input,
+.form-field select,
+.form-field textarea {
+  display: block;
+  width: 100%;
+  padding: 0 16px;
+  height: 52px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  outline: none;
+  font: inherit;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.form-field textarea {
+  height: auto;
+  min-height: 120px;
+  padding: 14px 16px;
+  resize: vertical;
+}
+
+.auth-form > input:focus,
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #438a5e;
+  box-shadow: 0 0 0 3px rgba(67, 138, 94, 0.12);
+}
+
+.form-hint {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.auth-form .submit-btn {
+  width: 100%;
+  min-height: 55px;
+  margin-top: 24px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.auth-switch a {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.demo-accounts {
+  margin-top: 28px;
+  padding: 16px 18px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  background: white;
+}
+
+.demo-accounts strong {
+  color: var(--text);
+}
+
+.login-image {
+  background:
+    linear-gradient(0deg, rgba(5, 31, 19, 0.85), rgba(5, 31, 19, 0.05)),
+    url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1400') center / cover;
+}
+
+/* ---------- Dashboard / admin page layout ---------- */
+
+.page {
+  padding: 50px 7% 90px;
+  min-height: calc(100vh - 85px - 220px);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.page-header h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(30px, 3.5vw, 44px);
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-top: 8px;
+}
+
+.page-header p {
+  color: var(--muted);
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.panel {
+  background: white;
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.045);
+}
+
+.panel h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.panel > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.panel + .panel {
+  margin-top: 28px;
+}
+
+.dash-grid > .panel + .panel {
+  margin-top: 0; /* side-by-side panels should line up */
+}
+
+.panel-form .btn {
+  margin-top: 22px;
+  width: 100%;
+}
+
+/* ---------- Lists of items (my campaigns, pending queue) ---------- */
+
+.item-list {
+  list-style: none;
+  margin-top: 18px;
+}
+
+.item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+}
+
+.item:first-child {
+  border-top: none;
+}
+
+.item-thumb {
+  width: 76px;
+  height: 76px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #e9efe5;
+}
+
+.item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-body h3 {
+  font-size: 16px;
+  margin: 2px 0 4px;
+  overflow-wrap: anywhere;
+}
+
+.item-body p {
+  font-size: 13px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ---------- Status badges ---------- */
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-pending {
+  background: #fff4d6;
+  color: #8a5a00;
+}
+
+.badge-approved {
+  background: #e3f5e6;
+  color: #1d6b37;
+}
+
+.badge-rejected {
+  background: #fbeaea;
+  color: #a12b2b;
+}
+
+/* ---------- Stat cards (admin) ---------- */
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.045);
+}
+
+.stat-card strong {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 34px;
+  color: var(--green);
+  line-height: 1.1;
+}
+
+.stat-card span {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.stat-card.highlight {
+  background: var(--dark);
+}
+
+.stat-card.highlight strong {
+  color: var(--lime);
+}
+
+.stat-card.highlight span {
+  color: #c9d9ce;
+}
+
+/* ---------- Tabs ---------- */
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0 4px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 9px 16px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.tab[aria-selected='true'] {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+.tab .count {
+  margin-left: 6px;
+  opacity: 0.75;
+}
+
+/* ---------- Home page: filters + live cards ---------- */
+
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.filters input[type='search'] {
+  flex: 1;
+  min-width: 220px;
+  height: 46px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: white;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.filters input[type='search']:focus {
+  border-color: #438a5e;
+}
+
+.chip {
+  padding: 10px 16px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chip[aria-pressed='true'] {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+.card-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin: -14px 0 18px;
+}
+
+.business-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  width: 100%;
+  margin: 6px 0 28px;
+}
+
+.business-tile {
+  background: white;
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+.business-tile strong {
+  display: block;
+  font-size: 15px;
+  overflow-wrap: anywhere;
+}
+
+.business-tile span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- Empty and loading states ---------- */
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  font-size: 14px;
+  grid-column: 1 / -1;
+}
+
+.empty-state strong {
+  display: block;
+  color: var(--text);
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.skeleton {
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, #eef2ec 25%, #f7f9f5 50%, #eef2ec 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+  min-height: 380px;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* ---------- Campaign detail page ---------- */
+
+.detail {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.detail-hero {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  margin: 20px 0 30px;
+}
+
+.detail h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(32px, 4vw, 50px);
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin: 10px 0 12px;
+}
+
+.detail-body {
+  font-size: 17px;
+  white-space: pre-line;
+  margin: 24px 0 34px;
+}
+
+/* ---------- Toast notification ---------- */
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--dark);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  z-index: 50;
+  max-width: calc(100% - 32px);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast.error {
+  background: #a12b2b;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 35px 5% 70px;
+  }
+
+  .panel {
+    padding: 22px;
+  }
+
+  .item {
+    flex-wrap: wrap;
+  }
+
+  .item-actions {
+    width: 100%;
+  }
+
+  .item-actions .btn {
+    flex: 1;
+  }
+
+  .user-chip {
+    display: none;
+  }
+
+  .detail-hero {
+    height: 240px;
+  }
+}
+
+/* =========================================
+   Single page app additions
+========================================= */
+
+/* Big headline on the picture side of login/register (was an h1 on the old separate pages) */
+.auth-hero-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(35px, 4vw, 60px);
+  font-weight: 700;
+  line-height: 1.12;
+  margin: 25px 0;
+  color: white;
+}
+
+/* The form heading on login/register */
+.auth-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(30px, 3vw, 42px);
+  margin: 12px 0;
+}
+
+.admin-grid {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+}
+
+@media (max-width: 900px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Current page in the navbar */
+.navbar nav a[aria-current='page'] {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Headings get focus after a page change (for keyboard users) without a box around them */
+.view h1:focus,
+.view h2:focus {
+  outline: none;
+}
+
+/* The register form keeps its existing look inside the app */
+#app .register-layout {
+  min-height: calc(100vh - 85px);
+}
+
+/* Password hint on the registration form */
+.field-hint {
+  display: block;
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+/* Links inside the terms checkbox line (FB-07) */
+.terms a {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Terms of Service and Privacy Policy pages */
+.policy-page {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.policy-section {
+  margin-bottom: 28px;
+}
+
+.policy-section h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.policy-section p {
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.policy-back a {
+  color: var(--green);
+  font-weight: 700;
+}
